@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoApp</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <h1>Todo</h1>
+            <img src="icons/Vector 1.svg" alt="">
+        </header>
+        <div class="folders" id="folder-holder">
+            <header>
+                <h2>Folders</h2>
+                <button onclick="newFolder()" class="new-folder"><img src="icons/Frame 4.svg" alt=""></button>
+            </header>
+            <div>
+                <header>
+                    <p contenteditable="true">name</p>
+                    <button onclick="deleteFolder()">delete</button>
+                </header>
+                <div class="task">
+                    <input type="checkbox" name="done" id="task-done-checkbock">
+                    <p contenteditable="true">task</p>
+                    <button onclick="createTask()">new Task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="todoapp.js"></script>
+</body>
+</html>
