@@ -1,36 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoApp</title>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="page-wrapper">
-        <header>
-            <h1>Todo</h1>
-            <img src="icons/Vector 1.svg" alt="">
-        </header>
-        <div class="folders" id="folder-holder">
-            <header>
-                <h2>Folders</h2>
-                <button onclick="newFolder()" class="new-folder"><img src="icons/Frame 4.svg" alt=""></button>
-            </header>
-            <div class="folder test">
-                <header id="folder-header">
-                    <p contenteditable="true">name</p>
-                    <button onclick="deleteFolder(this)">delete</button>
-                </header>
-                <div class="task">
-                    <input type="checkbox" name="done" id="task-done-checkbock">
-                    <p contenteditable="true">task</p>
-                    <button onclick="createTask()"><img src="icons/Frame 4.svg" alt=""></button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="todoapp.js"></script>
-</body>
+  </head>
+  <body>
+    <h1>Todo App</h1>
+    <form id="todo-form">
+      <input type="text" id="title-input" placeholder="Enter title..." />
+      <input
+        type="text"
+        id="description-input"
+        placeholder="Enter description..."
+      />
+      <button type="submit">Add Todo</button>
+    </form>
+    <ul id="todo-list"></ul>
+    <script src="app.js"></script>
+  </body>
 </html>
