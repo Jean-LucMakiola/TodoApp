@@ -88,3 +88,36 @@ todoForm.addEventListener("submit", (event) => {
 
 // Initial rendering
 getTodos();
+
+
+const loginForm = document.getElementById('login-form');
+
+loginForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  const response = await fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  });
+
+  const data = await response.json();
+
+  if (response.ok) {
+    // Save the JWT token to local storage
+    localStorage.setItem('token', data.token);
+
+    // Redirect the user to the app
+    window.location.href = '/app';
+  } else {
+    // Display an error message to the user
+    const errorMessage = document.createElement('p');
+    errorMessage.textContent = data.message;
+    loginForm.appendChild(errorMessage);
+  }
+});
