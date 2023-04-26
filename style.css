@@ -1,64 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500&family=Montserrat:wght@400;500;700&display=swap');
+
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-body{
-    background-color: #323232;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+:root{
+    --mainColor: #232323;
+    --grayAccentColor: #868686;
+    --yellowAccentColor: #F9E784;
 }
 
-.page-wrapper{
-    padding: 2rem;
-    
+h1{
+    font-family: 'Alumni Sans', sans-serif;
+    text-shadow: rgba(0, 0, 0 , 30%) 0 2px ;
+    font-weight: 500;
+    color: var(--mainColor);
+    font-size: 30px;
+}
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-shadow: rgba(0, 0, 0 , 30%) 0 2px ;
+    color: var(--mainColor);
+    font-size: 14px;
+}
+h4{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: var(--grayAccentColor);
+    font-size: 8px;
 }
 
-.page-wrapper > header{
-    display: flex;
-}
-.folders > header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: solid 1px gray;
-    border-bottom: solid 1px gray;
-    margin: 1rem 0 2rem;
-}
-.folders > header button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.backgroundcircle{
+    position: absolute;
+    z-index: 1;
+    top: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    background: var(--yellowAccentColor);
+    width: 130%;
     aspect-ratio: 1/1;
-    background-color: transparent;
-    padding: .2rem;
-    border: none;
+    border-radius: 50%;
 }
 
-.folder{
+.main_wrapper{
+    z-index: 10;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 40px;
+    justify-content: center;
 }
 
-.folder header{
+.app_header{
+    z-index: 10;
     display: flex;
+    flex-direction: row;
+    margin: 0 8%;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
-    text-decoration: underline;
+}
+.header-profile-picture{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+}
+.header-profile-picture > img{
+    width: 52px;
+    z-index: 100;
+}
+.profilePic_background{
+    width: 60px;
+    aspect-ratio: 1/1;
+    background: white;
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    top: -4%;
 }
 
-.task{
+.content-wrapper{
+    z-index: 100;
+    margin: 0 8%;
+    gap: 19px;
+}
+
+.category{
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: #00000025 0px 4px 4px;
     display: flex;
     align-items: center;
+    gap: 15px;
 }
-.task input{
-    margin-right: .2rem;
-}
-.task button{
+.category_menu{
     margin-left: auto;
-    border: none;
-    background: transparent;
+    height: 100%;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5px;
+    align-self: flex-start;
+    position: relative;
+}
+.category_menu span{
+    background-color: var(--mainColor);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+}
+
+.category_menu div{
+    display: none;
+    transition: all 100ms ease;
+    top: -10px;
+    right: -10px;
+    position: absolute;
+    aspect-ratio: 1/1;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: #00000025 0px 4px 4px;
+    -webkit-transition: all 100ms ease;
+    -moz-transition: all 100ms ease;
+    -ms-transition: all 100ms ease;
+    -o-transition: all 100ms ease;
+}
+.category_menu div ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.category_menu div ul li{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--mainColor);
+    font-size: 14px;
+}
+#button_deleteCat{
+    color: red;
+}
+#category_menu_popup.open{
+    display:flex ;
 }

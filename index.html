@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoApp</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="page-wrapper">
-        <header>
-            <h1>Todo</h1>
-            <img src="icons/Vector 1.svg" alt="">
-        </header>
-        <div class="folders" id="folder-holder">
-            <header>
-                <h2>Folders</h2>
-                <button onclick="newFolder()" class="new-folder"><img src="icons/Frame 4.svg" alt=""></button>
-            </header>
-            <div class="folder test">
-                <header id="folder-header">
-                    <p contenteditable="true">name</p>
-                    <button onclick="deleteFolder(this)">delete</button>
-                </header>
-                <div class="task">
-                    <input type="checkbox" name="done" id="task-done-checkbock">
-                    <p contenteditable="true">task</p>
-                    <button onclick="createTask()"><img src="icons/Frame 4.svg" alt=""></button>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doot</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+    <div class="main_wrapper">
+      <nav class="app_nav"><span></span></nav>
+      <header class="app_header">
+        <div class="header-title">
+          <h1>Hello Manu</h1>
+          <h2>Today you have 4 tasks</h2>
         </div>
+        <div class="header-profile-picture">
+          <img src="PP/icons-GirlsBoys 13.png" alt="" />
+          <div class="profilePic_background"></div>
+        </div>
+      </header>
+      <div class="content-wrapper">
+        <div class="category">
+          <div class="catagory_icon">
+            <img src="CATsIcons/--star.png" alt="" />
+          </div>
+          <div class="category_title">
+            <h2 style="font-weight: 700; text-shadow: none">Priority</h2>
+            <h4>5 tasks</h4>
+          </div>
+          <div class="category_menu">
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <div id="category_menu_popup" class="open">
+              <ul>
+                <li><a>Edit</a></li>
+                <li id="button_archiveCat">Archive</li>
+                <li id="button_deleteCat">Delete</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="todoapp.js"></script>
-</body>
+    <div class="backgroundcircle"></div>
+    <script src="index.js"></script>
+  </body>
 </html>
